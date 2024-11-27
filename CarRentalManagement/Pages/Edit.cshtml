@@ -1,0 +1,75 @@
+﻿@page
+@model CarRentalManagement.Pages.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Vehicle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Vehicle.Year" class="control-label"></label>
+                <input asp-for="Vehicle.Year" class="form-control" />
+                <span asp-validation-for="Vehicle.Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vehicle.LicensePlateNumber" class="control-label"></label>
+                <input asp-for="Vehicle.LicensePlateNumber" class="form-control" />
+                <span asp-validation-for="Vehicle.LicensePlateNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vehicle.MakeId" class="control-label"></label>
+                <input asp-for="Vehicle.MakeId" class="form-control" />
+                <span asp-validation-for="Vehicle.MakeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vehicle.ModelId" class="control-label"></label>
+                <input asp-for="Vehicle.ModelId" class="form-control" />
+                <span asp-validation-for="Vehicle.ModelId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vehicle.ColourId" class="control-label"></label>
+                <input asp-for="Vehicle.ColourId" class="form-control" />
+                <span asp-validation-for="Vehicle.ColourId" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Vehicle.Id" />
+            <div class="form-group">
+                <label asp-for="Vehicle.DateCreated" class="control-label"></label>
+                <input asp-for="Vehicle.DateCreated" class="form-control" />
+                <span asp-validation-for="Vehicle.DateCreated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vehicle.DateUpdated" class="control-label"></label>
+                <input asp-for="Vehicle.DateUpdated" class="form-control" />
+                <span asp-validation-for="Vehicle.DateUpdated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vehicle.CreatedBy" class="control-label"></label>
+                <input asp-for="Vehicle.CreatedBy" class="form-control" />
+                <span asp-validation-for="Vehicle.CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vehicle.UpdatedBy" class="control-label"></label>
+                <input asp-for="Vehicle.UpdatedBy" class="form-control" />
+                <span asp-validation-for="Vehicle.UpdatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

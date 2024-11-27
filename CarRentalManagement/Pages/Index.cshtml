@@ -1,0 +1,84 @@
+﻿@page
+@model CarRentalManagement.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicle[0].Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicle[0].LicensePlateNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicle[0].MakeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicle[0].ModelId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicle[0].ColourId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicle[0].DateCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicle[0].DateUpdated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicle[0].CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicle[0].UpdatedBy)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Vehicle) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicensePlateNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MakeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ColourId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateUpdated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedBy)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
